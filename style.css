@@ -35,6 +35,16 @@ body{
     background-color: rgb(230, 125, 6);
     width: 40%;
     height: 100%;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+
+
+    left: 60%;
+}
+
+.first-content{
+    display: flex;
+    display: none;
 }
 
 .first-column{
@@ -50,10 +60,6 @@ body{
     align-items: center;
 }
 
-.second-content{
-    position: absolute;
-    display: none;
-}
 
 .title{
     font-size: 20pt;
@@ -71,6 +77,7 @@ body{
 .list-social-media{
     display: flex;
     list-style-type: none;
+    margin: 10px;
     
 }
 
@@ -89,15 +96,27 @@ body{
 .form{
     display: flex;
     flex-direction: column;
-    width: 55%;
+    width: 60%;
     
 }
 
 .form input {
     height: 40px;
     border: none;
-    background-color: rgba(235, 201, 173, 0.651);
+    width: 100%;
+    background-color: rgb(235, 201, 173);
+}
+
+.label-input{
+    background-color: rgb(235, 201, 173);
+    display: flex;
+    align-items: center;
     margin: 8px;
+}
+
+.item-modify{
+    padding: 0 10px;
+    color: rgb(117, 116, 116);
 }
 
 .description{
@@ -135,6 +154,7 @@ body{
     color: rgb(248, 146, 29);
     border: 1px solid rgb(248, 146, 29);
     width: 180px;
+    align-self: center;
 
 }
 
@@ -150,8 +170,31 @@ body{
     transition: 200ms;
 }
 
-.first-content{
+/* Second Content */
+
+.second-content{
+    position: absolute;
     display: flex;
 }
 
+.second-content .first-column{
+    order: 2;
+}
 
+.second-content .second.column{
+    order: 1;
+}
+
+.forgot-password{
+    text-decoration: none;
+    color: rgb(117, 116, 116);
+    align-self: center;
+    font-size: 10pt;
+    margin-bottom: 5px;
+    width: 130px;
+    
+}
+
+.forgot-password:hover{
+    text-decoration: underline;
+}
