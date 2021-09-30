@@ -212,7 +212,9 @@ body{
     z-index: -1;
 }
 
-.entrar-js .second-content .first-column,
+.entrar-js .second-content .first-column{
+    z-index: 13;
+}
 .entrar-js .second-content .second-column{
     z-index: 11;
 }
@@ -223,9 +225,13 @@ body{
     border-bottom-right-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    animation: slidein 1.5s;
+    z-index: 12;
 }
 
-.cadastre-js .first-content .first-column,
+.cadastre-js .first-content .first-column{
+    z-index: 13;
+}
 .cadastre-js .first-content .second-column{
     z-index: 11;
 }
@@ -235,3 +241,55 @@ body{
     z-index: -1;
 }
 
+.cadastre-js .content::before{
+    animation: slideout 1.5s;
+    z-index: 12;
+}
+
+/* Animação CSS */
+
+@keyframes slidein{
+    from {
+        left: 0;
+        width: 40%;
+    }
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout{
+    from {
+        left: 60%;
+        width: 40%;
+    }
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+    to {
+        left: 0;
+        width: 40%;
+    }
+}
