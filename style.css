@@ -39,22 +39,25 @@ body{
     border-top-left-radius: 15px;
 
 
-    left: 60%;
+    left: 0;
 }
 
 .first-content{
     display: flex;
-    display: none;
+}
+
+.first-content .second-column{
+    z-index: 11;
 }
 
 .first-column{
     text-align: center;
-    flex: 1 0 auto;
+    width: 40%;
     z-index: 10;
 }
 
 .second-column{
-    flex: 2 0 auto;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,6 +75,7 @@ body{
 
 .title.second{
     color: rgb(230, 125, 6);
+    text-align: center;
 }
 
 .list-social-media{
@@ -179,10 +183,12 @@ body{
 
 .second-content .first-column{
     order: 2;
+    z-index: -1;
 }
 
-.second-content .second.column{
+.second-content .second-column{
     order: 1;
+    z-index: -1;
 }
 
 .forgot-password{
@@ -198,3 +204,34 @@ body{
 .forgot-password:hover{
     text-decoration: underline;
 }
+
+/*Troca de lados*/
+
+.entrar-js .first-content .first-column,
+.entrar-js .first-content .second-column{
+    z-index: -1;
+}
+
+.entrar-js .second-content .first-column,
+.entrar-js .second-content .second-column{
+    z-index: 11;
+}
+
+.entrar-js .content::before{
+    left: 60%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.cadastre-js .first-content .first-column,
+.cadastre-js .first-content .second-column{
+    z-index: 11;
+}
+
+.cadastre-js .second-content .first-column,
+.cadastre-js .second-content .second-column{
+    z-index: -1;
+}
+
