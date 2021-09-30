@@ -211,11 +211,6 @@ body{
     z-index: -1;
 }
 
-/* deslocamento conteudo por tras do content::before*/
-.entrar-js .first-content .second-column{
-    z-index: -1;
-}
-
 .entrar-js .second-content .first-column{
     z-index: 13;
 }
@@ -229,7 +224,7 @@ body{
     border-bottom-right-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    animation: slidein 1.5s;
+    animation: slidein 1s;
     z-index: 12;
 }
 
@@ -240,14 +235,26 @@ body{
     z-index: 11;
 }
 
-.cadastre-js .second-content .first-column,
-.cadastre-js .second-content .second-column{
+.cadastre-js .second-content .first-column{
     z-index: -1;
 }
 
 .cadastre-js .content::before{
-    animation: slideout 1.5s;
+    animation: slideout 1s;
     z-index: 12;
+}
+
+/* deslocamento conteudo por tras do content::before*/
+.entrar-js .first-content .second-column{
+    z-index: -1;
+    position: relative;
+    animation: deslocamento 1s;
+}
+
+.cadastre-js .second-content .second-column{
+    z-index: -1;
+    position: relative;
+    animation: deslocamento2 1s;
 }
 
 /* Animação CSS */
@@ -264,10 +271,6 @@ body{
     50% {
         left: 25%;
         width: 60%;
-    }
-    75% {
-        left: 45%;
-        width: 50%;
     }
     to {
         left: 60%;
@@ -288,12 +291,52 @@ body{
         left: 25%;
         width: 60%;
     }
-    75% {
-        left: 5%;
-        width: 50%;
-    }
     to {
         left: 0;
         width: 40%;
+    }
+}
+
+/*Animação do conteudo*/
+
+@keyframes deslocamento {
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+    25%{
+        left: -80px;
+        opacity: .5;
+    }
+    50%{
+        left: -105px;
+        opacity: .2;
+    }
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamento2 {
+    from {
+        right: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+    25%{
+        right: -80px;
+        opacity: .5;
+    }
+    50%{
+        right: -105px;
+        opacity: .2;
+    }
+    to {
+        right: -110px;
+        opacity: 0;
+        z-index: -1;
     }
 }
