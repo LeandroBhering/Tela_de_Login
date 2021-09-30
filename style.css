@@ -207,7 +207,11 @@ body{
 
 /*Troca de lados*/
 
-.entrar-js .first-content .first-column,
+.entrar-js .first-content .first-column{
+    z-index: -1;
+}
+
+/* deslocamento conteudo por tras do content::before*/
 .entrar-js .first-content .second-column{
     z-index: -1;
 }
